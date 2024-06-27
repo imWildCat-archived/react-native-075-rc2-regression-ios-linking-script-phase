@@ -10,8 +10,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-firebase/analytics": "^20.1.0",
+    "@react-native-firebase/app": "^20.1.0",
+    "@tamagui/config": "^1.101.3",
+    "@tamagui/core": "^1.101.3",
+    "@tamagui/lucide-icons": "^1.101.3",
     "react": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-native": "0.75.0-rc.2"
+    "react-native": "0.75.0-rc.2",
+    "react-native-svg": "^15.3.0",
+    "tamagui": "^1.101.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
