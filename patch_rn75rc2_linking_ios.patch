@@ -1,5 +1,5 @@
 diff --git a/before.txt b/after.txt
-index 4053631..9508625 100644
+index fec826c..9508625 100644
 --- a/before.txt
 +++ b/after.txt
 @@ -168,7 +168,7 @@ def link_native_modules!(config)
@@ -11,8 +11,3 @@ index 4053631..9508625 100644
            phase.delete("path")
          end
  
-@@ -203,4 +203,3 @@ $default_command = ['node', '-e', "process.argv=['', '', 'config'];require('@rea
- def use_native_modules!(config_command = $default_command)
-   return link_native_modules!(list_native_modules!(config_command))
- end
--
