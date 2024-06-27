@@ -1,17 +1,18 @@
 diff --git a/before.txt b/after.txt
-index 4053631..6434912 100644
+index 4053631..9508625 100644
 --- a/before.txt
 +++ b/after.txt
-@@ -47,7 +47,11 @@ def list_native_modules!(config_command)
+@@ -168,7 +168,7 @@ def link_native_modules!(config)
  
-     name = package["name"]
-     podspec_path = package_config["podspecPath"]
--    script_phases = package_config["scriptPhases"]
-+    script_phases = package_config["scriptPhases"].map do |script_phase|
-+      script_phase.merge({
-+        "path" => File.join(File.dirname(podspec_path), script_phase["path"]),
-+      })
-+    end
-     configurations = package_config["configurations"]
+         # Support passing in a path relative to the root of the package
+         if phase["path"]
+-          phase["script"] = File.read(File.expand_path(phase["path"], package["root"]))
++          phase["script"] = File.read(File.expand_path(phase["path"], package[:root]))
+           phase.delete("path")
+         end
  
-     # Add a warning to the queue and continue to the next dependency if the podspec_path is nil/empty
+@@ -203,4 +203,3 @@ $default_command = ['node', '-e', "process.argv=['', '', 'config'];require('@rea
+ def use_native_modules!(config_command = $default_command)
+   return link_native_modules!(list_native_modules!(config_command))
+ end
+-
