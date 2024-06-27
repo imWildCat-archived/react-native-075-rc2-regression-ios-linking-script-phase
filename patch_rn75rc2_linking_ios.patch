@@ -7,7 +7,7 @@ index fec826c..9508625 100644
          # Support passing in a path relative to the root of the package
          if phase["path"]
 -          phase["script"] = File.read(File.expand_path(phase["path"], package["root"]))
-+          phase["script"] = File.read(File.expand_path(phase["path"], package[:root]))
++          phase["script"] = File.read(File.expand_path(phase["path"], package[:path]))
            phase.delete("path")
          end
  
