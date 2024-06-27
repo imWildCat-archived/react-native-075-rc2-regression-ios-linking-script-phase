@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "patch node_modules/react-native/scripts/cocoapods/autolinking.rb < patch_rn75rc2_linking_ios.patch"
   },
   "dependencies": {
     "@react-native-firebase/analytics": "^20.1.0",
